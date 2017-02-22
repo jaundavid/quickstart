@@ -11,19 +11,20 @@ import {HeroService} from './hero.service'
 @Component({
   selector: 'hero-detail',
   template: `
-  <h2>{{hero.name}} details!</h2>
-  <div><label>id: </label>{{hero.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="hero.name" placeholder="name">
+  <div *ngIf="hero">
+    <h2>{{hero.name}} details!</h2>
+    <div><label>id: </label>{{hero.id}}</div>
+    <div>
+      <label>name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name">
+    </div>
   </div>
-  `,
-  providers: [HeroService]
+  `
 })
 
 export class HeroDetailComponent implements OnInit {
-  
-  @Input() hero: Hero;
+
+  hero: Hero;
 
   constructor(
     private heroService: HeroService,

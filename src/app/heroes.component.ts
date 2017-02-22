@@ -17,10 +17,8 @@ import { HeroService } from './hero.service';
           <span class="badge">{{hero.id}}</span> {{hero.name}}
         </li>
       </ul>
-      <div *ngIf="selectedHero">
-        <hero-detail [hero]=selectedHero></hero-detail>
-      </div>
-  `,
+      <hero-detail></hero-detail>
+  `
 })
 export class HeroesComponent implements OnInit {
 
